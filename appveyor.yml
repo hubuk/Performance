@@ -1,0 +1,20 @@
+version: 0.0.2.{build}-{branch}
+init:
+- ps: git config --global core.autocrlf true
+environment:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+nuget:
+  disable_publish_on_pr: true
+build_script:
+- ps: .\build.cmd --quiet verify
+test: off
+artifacts:
+- path: artifacts\build\Leet.Performance\Release\Leet.Performance.*.nupkg
+- path: artifacts\build\Leet.Tests.Performance\Release\Leet.Tests.Performance.*.nupkg
+deploy:
+- provider: Environment
+  name: MyGet
+  on:
+    branch: master
+    LEET_PUSH_NUGET: 1

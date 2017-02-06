@@ -58,5 +58,68 @@ namespace Leet.Performance.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to List cannot be null..
+        /// </summary>
+        public static string Exception_Argument_NullList {
+            get {
+                return ResourceManager.GetString("Exception_Argument_NullList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to List cannot contain null element..
+        /// </summary>
+        public static string Exception_Argument_NullListItem {
+            get {
+                return ResourceManager.GetString("Exception_Argument_NullListItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Progress percentage value cannot be Not-a-Number (System.Double.NaN)..
+        /// </summary>
+        public static string Exception_Argument_ProgressPercentageValueNaN {
+            get {
+                return ResourceManager.GetString("Exception_Argument_ProgressPercentageValueNaN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Progress percentage value cannot be less than zero nor greater than one..
+        /// </summary>
+        public static string Exception_ArgumentOutOfRange_ProgressPercentageValue {
+            get {
+                return ResourceManager.GetString("Exception_ArgumentOutOfRange_ProgressPercentageValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Number of repetitions must be greater than zero..
+        /// </summary>
+        public static string Exception_ArgumentOutOfRange_RepetitionsNonPositive {
+            get {
+                return ResourceManager.GetString("Exception_ArgumentOutOfRange_RepetitionsNonPositive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Number of performance scenarios must be greater than zero..
+        /// </summary>
+        public static string Exception_ArgumentOutOfRange_ScenarioCountNonPositive {
+            get {
+                return ResourceManager.GetString("Exception_ArgumentOutOfRange_ScenarioCountNonPositive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Amount of elapsed ticks cannot be less than zero..
+        /// </summary>
+        public static string Exception_ArgumentOutOfRange_TicksElapsed {
+            get {
+                return ResourceManager.GetString("Exception_ArgumentOutOfRange_TicksElapsed", resourceCulture);
+            }
+        }
     }
 }
