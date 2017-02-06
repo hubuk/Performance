@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B405DA41-25E5-4659-8352-6720BE492455}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		build.cmd = build.cmd
+		build.ps1 = build.ps1
+		build.sh = build.sh
+		CodeAnalysis.ruleset = CodeAnalysis.ruleset
+		global.json = global.json
+		LICENSE.txt = LICENSE.txt
+		makefile.shade = makefile.shade
+		NuGet.config = NuGet.config
+		README.md = README.md
+		StyleCop.json = StyleCop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{05240ADF-A46A-4D43-9AEE-4B4BB6C7ED5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8AEA2D43-5400-4B27-898A-6DD0A261A56B}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Leet.Performance", "src\Leet.Performance\Leet.Performance.xproj", "{3EDA427F-B01B-4D61-A426-B135A306F70E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Leet.Tests.Performance", "test\Leet.Tests.Performance\Leet.Tests.Performance.xproj", "{6F24EEF4-0A63-4483-9A74-5A596ED3A69F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EDA427F-B01B-4D61-A426-B135A306F70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDA427F-B01B-4D61-A426-B135A306F70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDA427F-B01B-4D61-A426-B135A306F70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDA427F-B01B-4D61-A426-B135A306F70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F24EEF4-0A63-4483-9A74-5A596ED3A69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F24EEF4-0A63-4483-9A74-5A596ED3A69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F24EEF4-0A63-4483-9A74-5A596ED3A69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F24EEF4-0A63-4483-9A74-5A596ED3A69F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3EDA427F-B01B-4D61-A426-B135A306F70E} = {05240ADF-A46A-4D43-9AEE-4B4BB6C7ED5D}
+		{6F24EEF4-0A63-4483-9A74-5A596ED3A69F} = {8AEA2D43-5400-4B27-898A-6DD0A261A56B}
+	EndGlobalSection
+EndGlobal
