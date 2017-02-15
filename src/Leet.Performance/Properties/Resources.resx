@@ -138,4 +138,7 @@
   <data name="Exception_Argument_ProgressPercentageValueNaN" xml:space="preserve">
     <value>Progress percentage value cannot be Not-a-Number (System.Double.NaN).</value>
   </data>
+  <data name="Exception_Argument_UnexpectedObjectType" xml:space="preserve">
+    <value>Expected object of {0} type.</value>
+  </data>
 </root>

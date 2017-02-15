@@ -42,7 +42,7 @@ namespace Leet.Specifications.Performance
         public void Invocation_WithNullContext_Throws(TSutFactory factory)
         {
             // Fixture setup
-            IFixture fixture = new DomainFixture();
+            IFixture fixture = DomainFixture.CreateFor(this);
             MeasurementContext<TSeed> context = null;
             CancellationToken cancellationToken = fixture.Create<CancellationToken>();
             PerformanceScenario<TSeed, TResult> sut = factory.CreateDelegate();
@@ -65,7 +65,7 @@ namespace Leet.Specifications.Performance
         public void Invocation_WithCancellationRequested_Throws(TSutFactory factory)
         {
             // Fixture setup
-            IFixture fixture = new DomainFixture();
+            IFixture fixture = DomainFixture.CreateFor(this);
             MeasurementContext<TSeed> context = fixture.Create<MeasurementContext<TSeed>>();
             CancellationToken cancellationToken = new CancellationToken(true);
             PerformanceScenario<TSeed, TResult> sut = factory.CreateDelegate();

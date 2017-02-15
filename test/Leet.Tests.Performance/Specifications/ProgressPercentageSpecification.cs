@@ -9,14 +9,13 @@ namespace Leet.Specifications.Performance
 {
     using System;
     using System.Collections.Generic;
-    using Leet;
     using Leet.Performance;
     using Xunit;
 
     /// <summary>
     ///     A class that specifies behavior for <see cref="ProgressPercentage"/> structure.
     /// </summary>
-    public abstract class ProgressPercentageSpecification
+    public abstract class ProgressPercentageSpecification : ObjectSpecification<ProgressPercentage>
     {
         private static readonly double OnePlusEpsilon = BitConverter.Int64BitsToDouble(BitConverter.DoubleToInt64Bits(1d) + 1);
         public static readonly IEnumerable<object[]> OnePlusEpsilonData = new[] { new object[] { OnePlusEpsilon } };

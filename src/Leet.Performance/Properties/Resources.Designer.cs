@@ -87,6 +87,15 @@ namespace Leet.Performance.Properties {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Expected object of {0} type..
+        /// </summary>
+        public static string Exception_Argument_UnexpectedObjectType {
+            get {
+                return ResourceManager.GetString("Exception_Argument_UnexpectedObjectType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Progress percentage value cannot be less than zero nor greater than one..
         /// </summary>
         public static string Exception_ArgumentOutOfRange_ProgressPercentageValue {

@@ -15,7 +15,7 @@ namespace Leet.Performance
     using Properties;
 
     /// <summary>
-    ///     Represents a daecimal value of the operation progress percentage in a range from 0 to 1.
+    ///     Represents a decimal value of the operation progress percentage in a range from 0 to 1.
     /// </summary>
     public struct ProgressPercentage : IComparable, IComparable<ProgressPercentage>, IEquatable<ProgressPercentage>, IFormattable
 #if NET_STANDARD_1_3
@@ -40,22 +40,22 @@ namespace Leet.Performance
         /// <summary>
         ///     Initializes a new instance of the <see cref="ProgressPercentage"/> class.
         /// </summary>
-        /// <param name="value">
+        /// <param name="progressPercentage">
         ///     Percentage progress value.
         /// </param>
-        public ProgressPercentage(double value)
+        public ProgressPercentage(double progressPercentage)
         {
-            if (double.IsNaN(value))
+            if (double.IsNaN(progressPercentage))
             {
-                throw new ArgumentException(Resources.Exception_Argument_ProgressPercentageValueNaN, nameof(value));
+                throw new ArgumentException(Resources.Exception_Argument_ProgressPercentageValueNaN, nameof(progressPercentage));
             }
 
-            if (value < 0d || value > 1d)
+            if (progressPercentage < 0d || progressPercentage > 1d)
             {
-                throw new ArgumentOutOfRangeException(nameof(value), Resources.Exception_ArgumentOutOfRange_ProgressPercentageValue);
+                throw new ArgumentOutOfRangeException(nameof(progressPercentage), Resources.Exception_ArgumentOutOfRange_ProgressPercentageValue);
             }
 
-            this.value = value;
+            this.value = progressPercentage;
         }
 
         /// <summary>
@@ -137,16 +137,120 @@ namespace Leet.Performance
         /// </exception>
         public int CompareTo(object obj)
         {
-            throw new NotImplementedException();
+            if (object.ReferenceEquals(obj, null))
+            {
+                return 1;
+            }
+
+            if (!(obj is ProgressPercentage))
+            {
+                throw new ArgumentException(string.Format(CultureInfo.CurrentCulture, Resources.Exception_Argument_UnexpectedObjectType, obj.GetType()));
+            }
+
+            return this.CompareTo((ProgressPercentage)obj);
         }
 
+        /// <summary>
+        ///     Compares the current instance with another object of the same type and returns an integer
+        ///     that indicates whether the current instance precedes, follows, or occurs in the same position
+        ///     in the sort order as the other object.
+        /// </summary>
+        /// <param name="other">
+        ///     An object to compare with this instance.
+        /// </param>
+        /// <returns>
+        ///     A value that indicates the relative order of the objects being compared.
+        ///     The return value has these meanings:
+        ///     <list type="table">
+        ///         <listheader>
+        ///             <term>
+        ///                 Value
+        ///             </term>
+        ///             <description>
+        ///                 Meaning
+        ///             </description>
+        ///         </listheader>
+        ///         <item>
+        ///             <term>
+        ///                 Less than zero
+        ///             </term>
+        ///             <description>
+        ///                 This instance precedes other in the sort order.
+        ///             </description>
+        ///         </item>
+        ///         <item>
+        ///             <term>
+        ///                 Zero
+        ///             </term>
+        ///             <description>
+        ///                 This instance occurs in the same position in the sort order as other.
+        ///             </description>
+        ///         </item>
+        ///         <item>
+        ///             <term>
+        ///                 Greater than zero
+        ///             </term>
+        ///             <description>
+        ///                 This instance follows other in the sort order.
+        ///             </description>
+        ///         </item>
+        ///     </list>
+        /// </returns>
         public int CompareTo(ProgressPercentage other)
         {
-            throw new NotImplementedException();
+            return this.value.CompareTo(other.value);
         }
+
+        /// <summary>
+        ///     Compares two <see cref="ProgressPercentage"/> values and returns an integer that indicates
+        ///     whether the first value is less than, equal to, or greater than the second value.
+        /// </summary>
+        /// <param name="left">
+        ///     The first progress percentage to compare. 
+        /// </param>
+        /// <param name="right">
+        ///     The second progress percentage to compare. 
+        /// </param>
+        /// <returns>
+        ///     One of the following values:
+        ///     <list type="table">
+        ///         <listheader>
+        ///             <term>
+        ///                 Value
+        ///             </term>
+        ///             <description>
+        ///                 Description
+        ///             </description>
+        ///         </listheader>
+        ///         <item>
+        ///             <term>
+        ///                 -1
+        ///             </term>
+        ///             <description>
+        ///                 <paramref name="left"/> is less than <paramref name="right"/>.
+        ///             </description>
+        ///         </item>
+        ///         <item>
+        ///             <term>
+        ///                 0
+        ///             </term>
+        ///             <description>
+        ///                 <paramref name="left"/> is equal to <paramref name="right"/>.
+        ///             </description>
+        ///         </item>
+        ///         <item>
+        ///             <term>
+        ///                 1
+        ///             </term>
+        ///             <description>
+        ///                 <paramref name="left"/> is greater than <paramref name="right"/>.
+        ///             </description>
+        ///         </item>
+        ///     </list>
+        /// </returns>
         public static int Compare(ProgressPercentage left, ProgressPercentage right)
         {
-            throw new NotImplementedException();
+            return left.value.CompareTo(right);
         }
         public static bool Equals(ProgressPercentage left, ProgressPercentage right)
         {

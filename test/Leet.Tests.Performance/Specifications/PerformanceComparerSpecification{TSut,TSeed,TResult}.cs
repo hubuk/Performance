@@ -97,7 +97,7 @@ namespace Leet.Specifications.Performance
         public void Compare_WithNullScenarios_Throws(PerformanceComparer<TSeed, TResult> sut)
         {
             // Fixture setup
-            DomainFixture fixture = new DomainFixture();
+            IFixture fixture = DomainFixture.CreateFor(this);
             IReadOnlyList<PerformanceScenario<TSeed, TResult>> scenarios = null;
             CancellationToken cancellationToken = fixture.Create<CancellationToken>();
             IProgress<ProgressPercentage> progress = fixture.Create<IProgress<ProgressPercentage>>();
@@ -117,7 +117,7 @@ namespace Leet.Specifications.Performance
         public void Compare_WithEmptyScenarios_Throws(PerformanceComparer<TSeed, TResult> sut)
         {
             // Fixture setup
-            DomainFixture fixture = new DomainFixture();
+            IFixture fixture = DomainFixture.CreateFor(this);
             IReadOnlyList<PerformanceScenario<TSeed, TResult>> scenarios = new PerformanceScenario<TSeed, TResult>[0];
             CancellationToken cancellationToken = fixture.Create<CancellationToken>();
             IProgress<ProgressPercentage> progress = fixture.Create<IProgress<ProgressPercentage>>();
@@ -137,7 +137,7 @@ namespace Leet.Specifications.Performance
         public void Compare_WithNullScenario_Throws(PerformanceComparer<TSeed, TResult> sut, PerformanceScenario<TSeed, TResult>[] scenarios)
         {
             // Fixture setup
-            DomainFixture fixture = new DomainFixture();
+            IFixture fixture = DomainFixture.CreateFor(this);
             int nullIndex = fixture.Create<int>() % scenarios.Length;
             scenarios[nullIndex] = null;
             CancellationToken cancellationToken = fixture.Create<CancellationToken>();
